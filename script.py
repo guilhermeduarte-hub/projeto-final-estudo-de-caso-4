@@ -1,3 +1,12 @@
+"""
+Estudo de Caso 6 - Loja de Cartas Pokémon
+
+Componentes:
+    - Alice Esther
+    - Guilherme Duarte
+    - Luiz Guilherme
+"""
+
 informacoes = []
 
 while True:
