@@ -1,4 +1,4 @@
-# Loja de Cartas Pokémon - Gestão de Estoque
+# Loja de Cartas Pokémon - Gestão de Estoque (Versão 2.0)
 
 ## Integrantes da Equipe
 - Alice Esther
@@ -6,15 +6,31 @@
 - Luiz Guilherme
 
 ## Estudo de Caso
-Estudo de Caso 4 — Loja de Cartas Pokémon
+Estudo de Caso 6 — Loja de Cartas Pokémon
 
 ## Descrição Resumida
-Sistema em Python executado via terminal desenvolvido para controlar o estoque de uma loja especializada em cartas Pokémon. O sistema gerencia o cadastro, consulta, atualização de fluxo de entrada/saída de cartas e listagem de itens esgotados.
+Sistema interativo desenvolvido em Python para execução em terminal, destinado ao gerenciamento de estoque de uma loja de cartas Pokémon. O sistema utiliza uma estrutura de dados baseada em **lista de dicionários** e organiza suas funcionalidades por meio de **submenus temáticos**.
 
-## Funcionalidades Implementadas
-1. **Cadastrar carta:** Registra o ID, título da carta e quantidade inicial em estoque.
-2. **Listar estoque:** Exibe todas as cartas cadastradas no sistema.
-3. **Consultar carta:** Busca e exibe os dados detalhados de uma carta específica pelo ID.
-4. **Registrar entrada:** Adiciona unidades ao estoque de uma carta cadastrada.
-5. **Registrar saída:** Subtrai unidades do estoque de uma carta cadastrada.
-6. **Listar cartas sem estoque:** Filtra e exibe apenas as cartas com quantidade igual a 0.
+## Estrutura do Menu e Funcionalidades
+
+### Menu Principal
+- **1 - Cadastros**
+  - **1.1 - Cadastrar carta:** Permite cadastrar uma nova carta registrando seu identificador (ID), título e quantidade inicial em estoque, contando com validação de ID único e bloqueio de quantidades negativas.
+- **2 - Consultas**
+  - **2.1 - Listar cartas:** Exibe todas as cartas atualmente cadastradas no sistema.
+  - **2.2 - Consultar carta:** Localiza e exibe os detalhes de uma carta específica através do seu ID.
+  - **2.3 - Listar cartas sem estoque:** Exibe um relatório filtrado contendo apenas as cartas que possuem quantidade em estoque igual a 0.
+- **3 - Estoque**
+  - **3.1 - Registrar entrada:** Adiciona novas unidades ao estoque de uma carta já existente (valida entradas maiores que zero).
+  - **3.2 - Registrar saída:** Dá baixa em unidades do estoque de uma carta (valida saldo disponível para evitar estoque negativo).
+- **0 - Sair:** Encerra a execução do sistema.
+
+## Estrutura de Dados Utilizada
+Os dados são armazenados em uma lista principal chamada `informacoes`, na qual cada item é um dicionário com a seguinte estrutura:
+
+```python
+{
+    'id': 'PK001',
+    'titulo': 'Pikachu',
+    'estoque': 10
+}
