@@ -176,5 +176,3 @@ while True:
 
     else:
         print('\nOpção inválida! Tente novamente.\n')
-
-    input('Pressione ENTER para continuar...\n')
