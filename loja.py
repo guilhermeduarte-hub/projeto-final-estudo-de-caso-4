@@ -10,7 +10,7 @@ Componentes:
 informacoes = []
 
 while True:
-    print('=================================')
+    print('\n=================================')
     print('      LOJA DE CARTAS POKÉMON')
     print('=================================\n')
     print('1 - Cadastros')
@@ -44,20 +44,20 @@ while True:
                         break
                         
                 if existe:
-                    print('Erro: Este identificador já está cadastrado!\n')
+                    print('\nErro: Este identificador já está cadastrado!')
                 else:
                     titulo = input('Digite o título da carta: ')
                     quantidade_estoque = int(input('Digite a quantidade em estoque: '))
                     
                     if quantidade_estoque < 0:
-                        print('Erro: A quantidade em estoque não pode ser negativa!\n')
+                        print('\nErro: A quantidade em estoque não pode ser negativa!')
                     else:
                         informacoes.append({
                             'id': id,
                             'titulo': titulo, 
                             'estoque': quantidade_estoque
                         })
-                        print('Carta cadastrada com sucesso!\n')
+                        print('\nCarta cadastrada com sucesso!')
 
 
     elif opcao == 2:
@@ -73,43 +73,43 @@ while True:
             if opcao == 0:
                 break
             elif opcao == 1:
-                print('\n========== ESTOQUE ==========\n')
+                print('\n========== ESTOQUE ==========')
                 if len(informacoes) == 0:
-                    print('Não há cartas cadastradas no estoque.\n')
+                    print('\nNão há cartas cadastradas no estoque.')
                 else:
                     for carta in informacoes:
-                        print(f'\nID: {carta['id']}')
-                        print(f'Carta: {carta['titulo']}')
-                        print(f'Quantidade: {carta['estoque']}\n')
+                        print(f"\nID: {carta['id']}")
+                        print(f"Carta: {carta['titulo']}")
+                        print(f"Quantidade: {carta['estoque']}")
             elif opcao == 2:
                 id = input('\nDigite o identificador da carta: ')
                 encontrada = False
 
                 for carta in informacoes:
                     if carta['id'] == id:
-                        print('\n========== CARTA ==========\n')
-                        print(f'\nID: {carta['id']}')
-                        print(f'Título: {carta['titulo']}')
-                        print(f'Quantidade em estoque: {carta['estoque']}\n')
+                        print('\n========== CARTA ==========')
+                        print(f"\nID: {carta['id']}")
+                        print(f"Título: {carta['titulo']}")
+                        print(f"Quantidade em estoque: {carta['estoque']}")
                         encontrada = True
                         break
                 if not encontrada:
-                    print('Carta não encontrada.\n')
+                    print('\nCarta não encontrada.')
             elif opcao == 3:
-                print('\n====== CARTAS SEM ESTOQUE ======\n')
+                print('\n====== CARTAS SEM ESTOQUE ======')
                 if len(informacoes) == 0:
-                    print('Não há cartas cadastradas.\n')
+                    print('\nNão há cartas cadastradas.')
                 else:
                     contador_zeradas = 0
                     for carta in informacoes:
                         if carta['estoque'] == 0:
-                            print(f'\nID: {carta['id']}')
-                            print(f'Título: {carta['titulo']}')
-                            print(f'Quantidade: {carta['estoque']}\n')
+                            print(f"\nID: {carta['id']}")
+                            print(f"Título: {carta['titulo']}")
+                            print(f"Quantidade: {carta['estoque']}\n")
                             contador_zeradas += 1
                     
                     if contador_zeradas == 0:
-                        print('Nenhuma carta sem estoque encontrada.\n')
+                        print('\nNenhuma carta sem estoque encontrada.')
 
 
     elif opcao == 3:
@@ -124,7 +124,7 @@ while True:
             if opcao == 0:
                 break
             elif opcao == 1:
-                id = input('Digite o identificador da carta: ')
+                id = input('\nDigite o identificador da carta: ')
                 encontrada = False
 
                 for carta in informacoes:
@@ -133,18 +133,18 @@ while True:
                         quantidade_recebida = int(input('Digite a quantidade recebida: '))
                         
                         if quantidade_recebida <= 0:
-                            print('\nErro: A quantidade recebida deve ser maior que zero.\n')
+                            print('\nErro: A quantidade recebida deve ser maior que zero.')
                         else:
                             carta['estoque'] += quantidade_recebida
                             print('\nEntrada registrada com sucesso!')
-                            print('O estoque agora será:\n')
-                            print(f'ID: {carta['id']}')
-                            print(f'Carta: {carta['titulo']}')
-                            print(f'Quantidade: {carta['estoque']}\n')
+                            print('\nO estoque agora será:')
+                            print(f"\nID: {carta['id']}")
+                            print(f"Carta: {carta['titulo']}")
+                            print(f"Quantidade: {carta['estoque']}\n")
                         break
                         
                 if not encontrada:
-                    print('Carta não encontrada.')
+                    print('\nCarta não encontrada.')
             elif opcao == 2:
                 id = input('\nDigite o identificador da carta: ')
                 encontrada = False
@@ -155,20 +155,20 @@ while True:
                         quantidade_retirada = int(input('Digite a quantidade retirada: '))
                         
                         if quantidade_retirada <= 0:
-                            print('\nErro: A quantidade retirada deve ser maior que zero.\n')
+                            print('\nErro: A quantidade retirada deve ser maior que zero.')
                         elif quantidade_retirada > carta['estoque']:
-                            print('\nErro: Quantidade indisponível em estoque.\n')
+                            print('\nErro: Quantidade indisponível em estoque.')
                         else:
                             carta['estoque'] -= quantidade_retirada
                             print('\nSaída registrada com sucesso!')
-                            print('O estoque passa a ser:\n')
-                            print(f'\nID: {carta['id']}')
-                            print(f'Carta: {carta['titulo']}')
-                            print(f'Quantidade: {carta['estoque']}\n')
+                            print('\nO estoque passa a ser:')
+                            print(f"\nID: {carta['id']}")
+                            print(f"Carta: {carta['titulo']}")
+                            print(f"Quantidade: {carta['estoque']}\n")
                         break
                         
                 if not encontrada:
-                    print('Carta não encontrada.')
+                    print('\nCarta não encontrada.')
 
     else:
-        print('\nOpção inválida! Tente novamente.\n')
+        print('\nOpção inválida! Tente novamente.')
