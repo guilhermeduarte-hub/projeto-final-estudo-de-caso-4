@@ -57,6 +57,8 @@ while True:
                             'estoque': quantidade_estoque
                         })
                         print('\nCarta cadastrada com sucesso!')
+            else:
+               print('\nOpção inválida!')
 
     elif opcao == 2:
         while True:
@@ -108,6 +110,8 @@ while True:
 
                     if contador_zeradas == 0:
                         print('\nNenhuma carta sem estoque encontrada.')
+            else:
+               print('\nOpção inválida!')
 
     elif opcao == 3:
         while True:
@@ -166,6 +170,8 @@ while True:
 
                 if not encontrada:
                     print('\nCarta não encontrada.')
+            else:
+               print('\nOpção inválida!')
 
     else:
         print('\nOpção inválida! Tente novamente.')
